@@ -14,7 +14,13 @@ fn main() {
     let mut bunnies = 2;
 
     // (write your `loop` here)
-
+    loop {
+        if bunnies > 500 {
+            break;
+        }
+        bunnies *= 2;
+        count += 1;
+    }
     println!(
         "Bunnies doubled {} times before there were more than 500",
         count
@@ -26,7 +32,9 @@ fn main() {
     let mut sum = 0;
 
     // (write the `for` loop here)
-
+    for x in 7..=23 {
+        sum += x;
+    }
     println!("The sum is {}", sum);
 
     // 3. Use a `while` loop to add 12 numbers to the `fives` vector.
@@ -43,6 +51,10 @@ fn main() {
     let mut number = 5;
 
     // (write the `while` loop here)
+    while fives.len() < 12 {
+        fives.push(number);
+        number += 5;
+    }
 
     println!("Here are the first 12 multiples of 5: {:?}", fives);
 
@@ -58,6 +70,13 @@ fn main() {
     let numbers = vec![0, 1, 2, 3, 4, 5];
     for number in numbers {
         // (write your `if/else` expression here)
+        if number == 0 {
+            total += 7;
+        } else if number == 1 || number == 2 {
+            total += 30;
+        } else {
+            total -= 5;
+        }
     }
 
     println!("The total is {}", total);
@@ -65,6 +84,32 @@ fn main() {
     // Challenge: Change the implementation of your answers to #1-#3 as follows:
     //
     // - Change #1 to use `while`
+    count = 0;
+    bunnies = 2;
+    while bunnies <= 500 {
+        bunnies *= 2;
+        count += 1;
+    }
+    println!(
+        "Bunnies doubled {} times before there were more than 500",
+        count
+    );
     // - Change #2 to use `loop`
+    sum = 0;
+    let mut x = 7;
+    loop {
+        if x > 23 {
+            break;
+        }
+        sum += x;
+        x += 1;
+    }
+    println!("The sum is {}", sum);
     // - Change #3 to use `for` and a range (multiply the range value by 5 inside your loop before
+    fives = vec![];
+    // (write the `while` loop here)
+    for number in 1..=12 {
+        fives.push(number * 5);
+    }
+    println!("Here are the first 12 multiples of 5: {:?}", fives);
 }
